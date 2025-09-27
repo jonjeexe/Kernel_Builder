@@ -1,12 +1,12 @@
 #!/system/bin/sh
 clear
 echo "- Date : $(date)"
-echo "\e[96m   ____ ___  __  __ ____  _     _     _____ ____  "
+echo "   ____ ___  __  __ ____  _     _     _____ ____  "
 echo "  / ___/ _ \|  \/  |  _ \| |   | |   | ____|  _ \ "
 echo " | |  | | | | |\/| | |_) | |   | |   |  _| | |_) |"
 echo " | |__| |_| | |  | |  __/| |___| |___| |___|  _ < "
-echo "  \____\___/|_|  |_|_|   |_____|_____|_____|_| \_\ \033[0m"
-echo "                   \e[93mby @Jonjeexe\033[0m                   "
+echo "  \____\___/|_|  |_|_|   |_____|_____|_____|_| \_\ "
+echo "                   by @Jonjeexe                   "
 echo ""
 echo "##################################"
 echo "## CLEANING BUILDING KERNEL SOURCE" 
@@ -26,21 +26,7 @@ sudo mkdir -p out
 sleep 1
 echo ""
 echo "# GENETATOR .CONFIG FILE MY KERNEL"
-sudo make O=out ARCH=$ARCH CC="$CC" blossom_defconfig
-echo ""
-read -p "Do you want GUI kernel configuration (menuconfig)? (y/n): " answer
-case "$answer" in
-    y|Y) 
-        echo "Opening menuconfig..."
-        make O=out menuconfig
-        ;;
-    n|N) 
-        echo "Skipping menuconfig. Continuing without GUI configuration."
-        ;;
-    *) 
-        echo "Invalid option. Please enter y or n."
-        ;;
-esac
+sudo make O=out ARCH=$ARCH CC="$CC" codename_defconfig
 echo ""
 echo "# START KERMEL COMPILING "
 sudo make -j$(nproc) O=out ARCH=$ARCH CC="$CC" \
