@@ -33,7 +33,7 @@ echo ""
 echo "###################################"
 echo "# GENETATOR .CONFIG FILE MY KERNEL"
 echo "###################################"
-sudo make O=out ARCH=$ARCH CC="$CC" blossom_defconfig
+sudo make O=out ARCH=$ARCH CC="$CC" codename_deconfig
 echo ""
 echo "#### START KERNEL COMPILING ####"
 sudo make -j$(nproc) O=out ARCH=$ARCH CC="$CC" \
