@@ -42,3 +42,4 @@ sudo make -j$(nproc) O=out ARCH=$ARCH CC="$CC" \
   AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy \
   OBJDUMP=llvm-objdump STRIP=llvm-strip \
   LD=ld.lld LLVM_IAS=1
+
