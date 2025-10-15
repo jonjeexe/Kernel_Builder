@@ -1,7 +1,7 @@
 ### Kernel Builder
 Script to compile kernel 
 ```cmd
-curl -O https://raw.githubusercontent.com/Jonjeexe/Kernel_Builder/refs/heads/main/Builder.sh
+curl -O https://raw.githubusercontent.com/Jonjeexe/Kernel_Builder/refs/heads/main/Build.sh
 ```
 
 ### Edit Compiler.sh
@@ -15,6 +15,6 @@ mine is blossom_deconfig
 ### Start Compile
 enter your kernel source then 
 ```cmd
-bash Builder.sh
+bash Build.sh
 ```
 
