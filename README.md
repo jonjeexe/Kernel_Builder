@@ -15,6 +15,6 @@ mine is blossom_deconfig
 ### Start Compile
 enter your kernel source then 
 ```cmd
-bash Build.sh
+bash build.sh
 ```
 
