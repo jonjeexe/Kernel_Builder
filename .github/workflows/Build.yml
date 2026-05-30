@@ -139,15 +139,15 @@ jobs:
       - name: Notify success and send zip to Telegram
         if: success()
         run: |
-          CAPTION="*Build Successful!*
-          *Date   :* $BUILD_DATE
-          *Time   :* ${BUILD_TIME}s
-          *MD5    :* \`${MD5_CHECKSUM}\`
-          *Package:* ${FINAL_ZIP}"
-          curl -s -F chat_id=${{ secrets.TELEGRAM_CHAT_ID }} \
+          CAPTION="✅ Build Successful!
+          Date    : ${BUILD_DATE}
+          Time    : ${BUILD_TIME}s
+          MD5     : ${MD5_CHECKSUM}
+          Package : ${FINAL_ZIP}"
+          curl -s \
+            -F chat_id=${{ secrets.TELEGRAM_CHAT_ID }} \
             -F document=@${FINAL_ZIP} \
             -F caption="$CAPTION" \
-            -F parse_mode=Markdown \
             https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendDocument
 
       - name: Notify failure on Telegram
